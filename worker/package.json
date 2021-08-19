@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "emoji-link-api",
+  "version": "1.0.0",
+  "description": "Shorten your URL's with emoji.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Luke Nelson <hello@lukenelson.uk",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "random-unicode-emoji": "^1.0.1"
+  }
+}
