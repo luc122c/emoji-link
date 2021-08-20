@@ -1,4 +1,8 @@
 baseURL = 'https://emoji-link.net/'
 languageCode = 'en-gb'
-title = 'URL shortner using emojis'
+title = 'Emoji Linker 🌐'
 theme = 'emoji'
+
+[params]
+author = 'Luke Nelson'
+description = "URL shortner using emojis"

@@ -1,3 +1,9 @@
 {{ define "main" }}
-<h1 class="title">{{ .Site.Title }}</h1>
+<!-- .container is main centered wrapper -->
+<div class="container">
+<div class="twelve columns">
+    {{- partial "form.html" . -}}
+</div>
+</div>
+  
 {{ end }}
