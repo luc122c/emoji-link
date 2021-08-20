@@ -1,3 +1,8 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://emoji-link.net/'
+languageCode = 'en-gb'
+title = 'Emoji Linker 🌐'
+theme = 'emoji'
+
+[params]
+author = 'Luke Nelson'
+description = "URL shortner using emojis"
