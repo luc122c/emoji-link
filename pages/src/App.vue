@@ -1,29 +1,15 @@
 <template>
   <w-app>
-    <w-card
-      title="Emoji Linker 🌐"
-      title-class="blue-light5--bg"
-      class="ma12 mt12"
-    >
-      <w-form>
-        <w-input class="mb3" type="url" placeholder="Enter a URL here"  :validators="[validators.required]">
-        </w-input>
-
-        <w-button type="submit">Submit</w-button>
-      </w-form>
-    </w-card>
+    <h1 class="headline">Emoji Linker 🌐</h1>
+    <search-box  class="ma12 mt12"></search-box>
   </w-app>
 </template>
 
 <script>
+import SearchBox from "./components/SearchBox.vue";
 export default {
   name: "App",
-  components: {},
-  data: () => ({
-  validators: {
-    required: value => !!value || 'This field is required'
-  }
-})
+  components: { SearchBox },
 };
 </script>
 
