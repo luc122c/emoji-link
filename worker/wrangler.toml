@@ -3,7 +3,7 @@ type = "webpack"
 
 account_id = "97836032ba6aea7b7dde9d22aee525e5"
 workers_dev = true
-route = "*.emoji-link.net/*"
+route = "emoji-link.net/*"
 zone_id = "3dc7a1d7b8b504b3253a8e57015aeea6"
 
 kv_namespaces = [
