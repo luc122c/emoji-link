@@ -9,3 +9,6 @@ zone_id = "3dc7a1d7b8b504b3253a8e57015aeea6"
 kv_namespaces = [
     { binding = "LINKS", id = "c4d3fde65362456a885dd74ce9b29ee7", preview_id = "f7b1fa51c48c4e9b8d8e6d22380e0d29" },
 ]
+
+[vars]
+WORKER_API_URL="https://emoji-link.net/"

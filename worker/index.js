@@ -1,4 +1,4 @@
-const BASEURL = new URL("https://emoji-link.net/")
+const emojiBaseURL = new URL(WORKER_API_URL)
 const randomEmojiLib = require('random-unicode-emoji')
 var stringLength = 5
 
@@ -115,7 +115,7 @@ async function handleRequest(request) {
             Status: 200,
             Message: 'Successfully created new link',
             LongURL: longURL,
-            ShortURL: BASEURL + randomKey,
+            ShortURL: emojiBaseURL + randomKey,
           }),
           {
             headers: { 'Content-Type': 'application/json' },
@@ -137,8 +137,8 @@ async function handleRequest(request) {
       }
     } else {
       // If there's no shortlink and no 'new' parameter, then it's just the root URL.
-      return fetch(request)
-      /*
+      // return fetch(request)
+
       return new Response(
         JSON.stringify({
           Status: 200,
@@ -150,7 +150,7 @@ async function handleRequest(request) {
           statusText: 'OK',
           headers: { 'Content-Type': 'application/json' },
         },
-      ) */
+      )
     }
   }
 }
