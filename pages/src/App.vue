@@ -1,15 +1,35 @@
 <template>
   <w-app>
-    <h1 class="headline">Emoji Linker 🌐</h1>
-    <search-box  class="ma12 mt12"></search-box>
+    <h1 class="headline mb5">Emoji Linker 🌐</h1>
+    <search-box
+      v-if="!shortLink"
+      class="xs6 mxa"
+      @showLink="setLink($event)"
+    ></search-box>
+    <link-presentation
+      v-if="shortLink"
+      class="xs6 mxa"
+      :shortLink="shortLink"
+    ></link-presentation>
   </w-app>
 </template>
 
 <script>
+import LinkPresentation from "./components/LinkPresentation.vue";
 import SearchBox from "./components/SearchBox.vue";
 export default {
   name: "App",
-  components: { SearchBox },
+  components: { SearchBox, LinkPresentation },
+  data() {
+    return {
+      shortLink: null,
+    };
+  },
+  methods: {
+    setLink: function (link) {
+      this.shortLink = link;
+    },
+  },
 };
 </script>
 

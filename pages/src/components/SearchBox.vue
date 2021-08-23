@@ -32,7 +32,7 @@ export default {
           try {
             new URL(value);
           } catch (e) {
-            return value + "is not a valid URL.";
+            return value + " is not a valid URL.";
           }
         },
       },
@@ -49,10 +49,11 @@ export default {
     async getShortLink() {
       // const response = await axios.get( "https://emoji-link.net/?new="+this.link)
       const response = await axios.get(
-        "http://127.0.0.1:8787/?new=" + this.longLink
+        process.env.VUE_APP_API_URL + "?new=" + this.longLink
       );
       if (response.status == 200) {
         this.shortLink = response.data.ShortURL;
+        this.$emit("showLink", this.shortLink);
       }
       this.loading = false;
     },
