@@ -28,6 +28,27 @@ async function getUniqueRandomEmojiString() {
 }
 
 /**
+ * Function to return an error to the user 
+ * @param {error} Error object from try/catch
+ * @param {Integer} HTTP status code to return to user
+ */
+function returnError(error, status) {
+  code = parseInt(status)
+  return new Response(
+    JSON.stringify({
+      Status: code,
+      Message: error.message,
+      ShortUrl: null,
+    }),
+    {
+      status: code,
+      statusText: 'Server error',
+      headers: { 'Content-Type': 'application/json' },
+    },
+  )
+}
+
+/**
  * Checks KV to see if the key exists
  * @param {String} key
  * @returns {Boolean}
@@ -42,13 +63,57 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
-  var requestURLObj = new URL(request.url)
+  const requestURLObj = new URL(request.url)
+  const requestPath = requestURLObj.pathname.split('/')
+  const searchParams = requestURLObj.searchParams
 
-  // Get the pathname to look for a short link
-  requestPath = requestURLObj.pathname.split('/')
+  if (searchParams.get('new')) {
+    try {
+      var longURL = new URL(searchParams.get('new'))
 
-  if (requestPath[1]) {
-    var longURLResult = await LINKS.get(decodeURIComponent(requestPath[1]))
+      try {
+        // Get a unique and random string
+        var randomKey = await getUniqueRandomEmojiString()
+      } catch (e) {
+        returnError(e, 500)
+      }
+
+      try {
+        // Put the new showr link into KV
+        await LINKS.put(randomKey, longURL.toString())
+      } catch (e) {
+        returnError(e, 500)
+      }
+
+      // Return the results to the user
+      return new Response(
+        JSON.stringify({
+          Status: 200,
+          Message: 'Successfully created new link',
+          LongURL: longURL,
+          ShortURL: emojiBaseURL + '🔗/' + randomKey,
+        }),
+        {
+          headers: { 'Content-Type': 'application/json' },
+        },
+      )
+    } catch (e) {
+      return new Response(
+        JSON.stringify({
+          Status: 400,
+          Message: e.message,
+          ShortUrl: null,
+        }),
+        {
+          status: 400,
+          statusText: 'Bad Request',
+          headers: { 'Content-Type': 'application/json' },
+        },
+      )
+    }
+  }
+  else if (requestPath[1] && decodeURIComponent(requestPath[1]) == '🔗' && requestPath[2]) {
+    var longURLResult = await LINKS.get(decodeURIComponent(requestPath[2]))
 
     if (longURLResult) {
       var requested_url = new URL(longURLResult)
@@ -68,89 +133,20 @@ async function handleRequest(request) {
       )
     }
   } else {
-    // If there is no short link, check if are we trying to create a new one
-    if (requestURLObj.searchParams.get('new')) {
-      try {
-        var longURL = new URL(requestURLObj.searchParams.get('new'))
+    // If there's no shortlink and no 'new' parameter, then pass the request through to the origin.
+    return await fetch(request)
 
-        try {
-          // Get a unique and random string
-          var randomKey = await getUniqueRandomEmojiString()
-        } catch (e) {
-          return new Response(
-            JSON.stringify({
-              Status: 500,
-              Message: e.message,
-              ShortUrl: null,
-            }),
-            {
-              status: 500,
-              statusText: 'Server error',
-              headers: { 'Content-Type': 'application/json' },
-            },
-          )
-        }
-
-        try {
-          // Put the new showr link into KV
-          await LINKS.put(randomKey, longURL.toString())
-        } catch (e) {
-          return new Response(
-            JSON.stringify({
-              Status: 500,
-              Message: e.message,
-              ShortUrl: null,
-            }),
-            {
-              status: 500,
-              statusText: 'Server error',
-              headers: { 'Content-Type': 'application/json' },
-            },
-          )
-        }
-
-        // Return the results to the user
-        return new Response(
-          JSON.stringify({
-            Status: 200,
-            Message: 'Successfully created new link',
-            LongURL: longURL,
-            ShortURL: emojiBaseURL + randomKey,
-          }),
-          {
-            headers: { 'Content-Type': 'application/json' },
-          },
-        )
-      } catch (e) {
-        return new Response(
-          JSON.stringify({
-            Status: 400,
-            Message: e.message,
-            ShortUrl: null,
-          }),
-          {
-            status: 400,
-            statusText: 'Bad Request',
-            headers: { 'Content-Type': 'application/json' },
-          },
-        )
-      }
-    } else {
-      // If there's no shortlink and no 'new' parameter, then it's just the root URL.
-      return fetch(request)
-
-      return new Response(
-        JSON.stringify({
-          Status: 200,
-          Message: 'Root URL specified',
-          ShortUrl: null,
-        }),
-        {
-          status: 200,
-          statusText: 'OK',
-          headers: { 'Content-Type': 'application/json' },
-        },
-      )
-    }
+    return new Response(
+      JSON.stringify({
+        Status: 200,
+        Message: 'Pass through',
+        ShortUrl: null,
+      }),
+      {
+        status: 200,
+        statusText: 'OK',
+        headers: { 'Content-Type': 'application/json' },
+      },
+    )
   }
 }
