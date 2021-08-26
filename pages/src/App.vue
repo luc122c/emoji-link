@@ -3,12 +3,12 @@
     <h1 class="headline mb5">Emoji Linker 🌐</h1>
     <search-box
       v-if="!shortLink"
-      class="xs6 mxa"
+      class="xs11 lg6 mxa"
       @showLink="setLink($event)"
     ></search-box>
     <link-presentation
       v-if="shortLink"
-      class="xs6 mxa"
+      class="xs11 lg6 mxa"
       :shortLink="shortLink"
     ></link-presentation>
   </w-app>

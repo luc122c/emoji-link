@@ -109,7 +109,7 @@ async function handleRequest(request) {
           )
         }
 
-        // Return the results to the user      
+        // Return the results to the user
         return new Response(
           JSON.stringify({
             Status: 200,
@@ -137,7 +137,7 @@ async function handleRequest(request) {
       }
     } else {
       // If there's no shortlink and no 'new' parameter, then it's just the root URL.
-      // return fetch(request)
+      return fetch(request)
 
       return new Response(
         JSON.stringify({
