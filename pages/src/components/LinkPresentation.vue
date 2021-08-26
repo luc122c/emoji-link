@@ -1,7 +1,7 @@
 <template>
   <w-card title="Here is your link" title-class="blue-light5--bg title4">
-    <w-input type="url" class="mb3" :value="shortLink" ref="newLink" readonly> </w-input>
-    <w-button class="ml5">Copy to Clipboard</w-button>
+    <w-input type="url" class="mb3" :value="shortLink" v-select-input readonly>
+    </w-input>
   </w-card>
 </template>
 
