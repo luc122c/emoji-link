@@ -5,12 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "yarn" 
+  - package-ecosystem: "npm" 
     directory: "/pages" 
     schedule:
       interval: "weekly"
       
-  - package-ecosystem: "yarn" 
+  - package-ecosystem: "npm" 
     directory: "/worker" 
     schedule:
       interval: "weekly"
