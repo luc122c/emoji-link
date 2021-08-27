@@ -1,7 +1,7 @@
 <template>
   <w-app>
-    <h1 class="headline mb5">{{ title }}</h1>
-    <h2 class="mb5 title3">{{ description }}</h2>
+    <h1 class="headline mb5">Emoji Linker 🌐</h1>
+    <h2 class="mb5 title3">It's a link shortener, but with emoji!</h2>
     <search-box
       v-if="!shortLink"
       class="xs11 lg6 mxa my5"
@@ -26,14 +26,9 @@ import { bugs, repository, author } from "../package";
 export default {
   name: "App",
   components: { SearchBox, LinkPresentation },
-  created(){
-    document.title = this.title
-  },
   data() {
     return {
       shortLink: null,
-      title: "Emoji Linker 🌐",
-      description: "It's a link shortener, but with emoji!",
       items: [
         {
           title: "What is this?",
