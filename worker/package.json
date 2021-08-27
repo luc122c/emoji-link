@@ -2,6 +2,7 @@
   "name": "emoji-link-api",
   "version": "1.0.0",
   "private": true,
+  "license": "ISC",
   "homepage": "https://emoji-link.net",
   "author": {
     "name": "Luke Nelson",
@@ -23,7 +24,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write '**/*.{js,css,json,md}'"
   },
-  "license": "MIT",
   "devDependencies": {
     "prettier": "^1.18.2"
   },
