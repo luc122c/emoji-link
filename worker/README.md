@@ -7,7 +7,7 @@ This is the API for an emoji link shortner.
 Send a request with the long link as the `new` parameter
 
 ```
-GET https://dev-summer.luc122c.workers.dev/new?=https://example.com/thisisareallylonglink
+GET https://emoji-link.net/new?=https://example.com/thisisareallylonglink
 ```
 
 Response:
@@ -16,8 +16,8 @@ Response:
  {
     "Status":200,
     "Message":"Successfully created new link",
-    "LongURL":"https://example.com",
-    "ShortURL":"https://dev-summer.luc122c.workers.dev/🚿🚙😄✍️📫"
+    "LongURL":"https://example.com/thisisareallylonglink",
+    "ShortURL":"https://emoji-link.net/🚿🚙😄✍️📫"
  }
 ```
 

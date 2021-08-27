@@ -1,14 +1,28 @@
 {
-  "private": true,
   "name": "emoji-link-api",
   "version": "1.0.0",
-  "description": "Shorten your URL's with emoji.",
+  "private": true,
+  "homepage": "https://emoji-link.net",
+  "author": {
+    "name": "Luke Nelson",
+    "email": "hello@lukenelson.uk",
+    "url": "https://LukeNelson.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luc122c/emoji-link.git",
+    "directory": "worker"
+  },
+  "bugs": {
+    "url": "https://github.com/luc122c/emoji-link/issues",
+    "email": "hello@lukenelson.uk"
+  },
+  "description": "Backend worker for my emoji URL shortener.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write '**/*.{js,css,json,md}'"
   },
-  "author": "Luke Nelson <hello@lukenelson.uk",
   "license": "MIT",
   "devDependencies": {
     "prettier": "^1.18.2"

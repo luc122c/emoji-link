@@ -1,7 +1,23 @@
 {
   "name": "emoji-linker-pages",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": true,  "homepage": "https://emoji-link.net",
+  "author": {
+    "name": "Luke Nelson",
+    "email": "hello@lukenelson.uk",
+    "url": "https://LukeNelson.uk"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luc122c/emoji-link.git",
+    "directory": "pages"
+  },
+  "bugs": {
+    "url": "https://github.com/luc122c/emoji-link/issues",
+    "email": "hello@lukenelson.uk"
+  },
+  "description": "Frontend website for my emoji URL shortener.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
