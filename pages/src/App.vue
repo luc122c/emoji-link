@@ -61,7 +61,7 @@ export default {
         {
           title: "Which emoji does it use?",
           content:
-            "I'm using a package called <a target='_blank' href='https://github.com/pketh/random-unicode-emoji'>random-unicode-emoji</a> to get a random string of emoji. It hasn't been updated since 2016 (at the time of writing) but it has no dependencies, so I preferred it over alternatives with some of the latest emoji. Perhaps in the future I'll update the API to use more emoji.",
+            "I'm using a package called <a target='_blank' href='https://github.com/pketh/random-unicode-emoji'>random-unicode-emoji</a> to get a random string of emoji.",
         },
         {
           title: "How is it built?",
