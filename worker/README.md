@@ -17,7 +17,7 @@ Response:
     "Status":200,
     "Message":"Successfully created new link",
     "LongURL":"https://example.com/thisisareallylonglink",
-    "ShortURL":"https://emoji-link.net/🚿🚙😄✍️📫"
+    "ShortURL":"https://emoji-link.net/🔗/🌑🍌💶👝📰"
  }
 ```
 
