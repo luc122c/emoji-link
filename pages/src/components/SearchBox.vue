@@ -9,6 +9,7 @@
         :validators="[validators.required, validators.isURL]"
         :loading="this.loading"
         autocomplete="off"
+        v-model="this.longLink"
       >
       </w-input>
 
@@ -41,13 +42,9 @@ export default {
   methods: {
     success: function (data) {
       this.loading = true;
-      const formData = new FormData(data.e.target);
-      var link = formData.get("link");
-      this.longLink = new URL(link);
-      this.getShortLink();
+      this.getShortLink(data);
     },
     async getShortLink() {
-      // const response = await axios.get( "https://emoji-link.net/?new="+this.link)
       const response = await axios.get(
         process.env.VUE_APP_API_URL + "?new=" + this.longLink
       );
