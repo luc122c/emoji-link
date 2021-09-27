@@ -50,7 +50,7 @@ export default {
       );
       if (response.status == 200) {
         this.shortLink = response.data.ShortURL;
-        this.$emit("showLink", this.shortLink);
+        this.$emit("show-link", this.shortLink);
       }
       this.loading = false;
     },

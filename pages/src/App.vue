@@ -5,7 +5,7 @@
     <search-box
       v-if="!shortLink"
       class="xs11 lg6 mxa my5"
-      @showLink="setLink($event)"
+      @show-link="setLink($event)"
     ></search-box>
     <link-presentation
       v-if="shortLink"
