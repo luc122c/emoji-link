@@ -10288,10 +10288,10 @@ watchpack@^2.2.0:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
 
-wave-ui@^2.23.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/wave-ui/-/wave-ui-2.24.0.tgz#e768e5d8f6702e0435188aaa73004aa00e7ce00e"
-  integrity sha512-pMH3BSnPwhK4T7LBtWEKrB0Qz7CqzKwGt5GWCZd655p9Il3CPb/Br67GJMUY9Q590628W+AWfVItp1tNyQuhaA==
+wave-ui@^2.25.0:
+  version "2.25.0"
+  resolved "https://registry.yarnpkg.com/wave-ui/-/wave-ui-2.25.0.tgz#7ff3d00054eae940f6cbf9fdfdb4e3819d464de7"
+  integrity sha512-iXmQrD6fjaX2tghGSkfklmqIOsGpxiWlQoIeG1syep5tK1yTnZ0L6W8rFqqh6sazyE/avRi+DGl8rW4wUTjujw==
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"
