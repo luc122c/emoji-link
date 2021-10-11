@@ -32,7 +32,7 @@
     "wave-ui": "^2.23.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^5.0.0-beta.4",
+    "@vue/cli-plugin-babel": "^5.0.0-beta.5",
     "@vue/cli-plugin-eslint": "^5.0.0-beta.4",
     "@vue/cli-plugin-unit-jest": "^5.0.0-beta.4",
     "@vue/cli-service": "^5.0.0-beta.4",
