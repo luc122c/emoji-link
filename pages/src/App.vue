@@ -25,7 +25,7 @@
 <script>
 import LinkPresentation from "./components/LinkPresentation.vue";
 import SearchBox from "./components/SearchBox.vue";
-import { bugs, repository, author } from "../package";
+import packageJSON from "../package";
 
 export default {
   name: "App",
@@ -53,9 +53,9 @@ export default {
           title: "Who made this?",
           content:
             "This service is made by <a target='_blank' href='" +
-            author.url +
+            packageJSON.author.url +
             "'>" +
-            author.name +
+            packageJSON.author.name +
             "</a>. Feel free to get in touch through my website.",
         },
         {
@@ -77,14 +77,14 @@ export default {
           title: "Where can I find the code?",
           content:
             "All the code for the frontend application and the backend worker is in a <a target='_blank' href='" +
-            repository.url +
+            packageJSON.repository.url +
             "'>public repository on GitHub</a>.",
         },
         {
           title: "What should I do if I break it?",
           content:
             "Please report any issues on the <a target='_blank' href='" +
-            bugs.url +
+            packageJSON.bugs.url +
             "'>GitHub repository</a>.",
         },
       ],
