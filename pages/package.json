@@ -39,7 +39,7 @@
     "@vue/cli-service": "^5.0.0-beta.4",
     "@vue/cli-test-utils": "^5.0.0-beta.4",
     "@vue/compiler-sfc": "^3.2.9",
-    "@vue/test-utils": "^2.0.0-rc.15",
+    "@vue/test-utils": "^2.0.0-rc.16",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^7.0.0-beta.4",
