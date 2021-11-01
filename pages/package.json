@@ -32,6 +32,7 @@
     "wave-ui": "^2.23.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.15.8",
     "@vue/cli-plugin-babel": "^5.0.0-beta.6",
     "@vue/cli-plugin-eslint": "^5.0.0-beta.4",
@@ -40,7 +41,8 @@
     "@vue/cli-test-utils": "^5.0.0-beta.4",
     "@vue/compiler-sfc": "^3.2.9",
     "@vue/test-utils": "^2.0.0-rc.16",
-    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "@vue/vue3-jest": "^27.0.0-alpha.3",
+    "babel-jest": "^27.3.1",
     "eslint": "^8.0.1",
     "eslint-plugin-vue": "^7.0.0-beta.4",
     "jest": "^27.1.0",
