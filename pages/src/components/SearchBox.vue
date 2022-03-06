@@ -21,7 +21,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "Search Box",
+  name: "Search-Box",
   data() {
     return {
       longLink: null,

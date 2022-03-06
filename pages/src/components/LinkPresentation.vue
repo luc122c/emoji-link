@@ -22,7 +22,7 @@ a[href] {
 
 <script>
 export default {
-  name: "Link Presentaton",
+  name: "Link-Presentaton",
   props: {
     shortLink: String,
   },
